@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+  </head>
+  <body>
+  <header>
+      <div class="header_logo">
+          <p>IFNUH</p>
+      </div>
+      <nav class="navig">
+          <a href="/">Главная</a>
+          <a href="/about">О нас</a>
+          <a href="/create">Добавление записи</a>
+          <a href=/posts>Лента</a>
+      </nav>
+      <div></div>
+  </header>
+    {% block body %}{% endblock %}
+  </body>
+</html>
