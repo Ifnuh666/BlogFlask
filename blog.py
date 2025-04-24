@@ -24,14 +24,55 @@ def index():
 
 @app.route("/posts")
 def posts():
-    posts = Article.query.order_by(Article.date).all()
+    posts = Article.query.order_by(Article.date.desc()).all()
     return render_template("posts.html", posts=posts)
+
+
+#Декоратор для вывода определенной статьи (т.е. полностью ее текст)
+@app.route("/posts/<int:id>")
+def posts_detail(id):
+    article = Article.query.get(id)
+    return render_template("posts_detail.html", article=article)
+
+
+#get_or_404 - в случае если пост не найден, будет вызываться ошибка 404
+
+@app.route("/posts/<int:id>/delete")
+def posts_delete(id):
+    article = Article.query.get_or_404(id)
+#Прописываем проверку на удаление поста
+    try:
+        db.session.delete(article)
+        db.session.commit()
+        return redirect("/posts")
+    except:
+        return "При удалении статьи произошла ошибка!"
+
+
+@app.route("/posts/<int:id>/update", methods=['POST', 'GET'])
+def posts_update(id):
+    article = Article.query.get(id)
+    if request.method == "POST":
+        article.title = request.form['title']
+        article.intro = request.form['intro']
+        article.text = request.form['text']
+
+        try:
+            db.session.commit()
+            return redirect("/posts")
+        except:
+            return "При редактировании статьи произошла ошибка!"
+
+    else:
+        article = Article.query.get(id)
+        return render_template("post_update.html", article=article)
 
 
 @app.route("/about")
 def about():
     return render_template("about.html")
 
+#Добавление записи в бд
 @app.route("/create", methods=['POST', 'GET'])
 def create():
     if request.method == "POST":
@@ -44,7 +85,7 @@ def create():
         try:
             db.session.add(post)
             db.session.commit()
-            return redirect("/")
+            return redirect("/posts")
         except:
             return "При добавлении статьи произошла ошибка!"
 

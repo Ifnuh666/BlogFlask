@@ -5,6 +5,28 @@
 {% endblock %}
 
 {% block body %}
-<h1>О нас</h1>
-<hr>
+<p class="con2">Социальные сети:</p>
+    <div class="info">
+      <div class="card">
+        <img src="{{ url_for('static', filename='images/githublogo.png') }}" alt="GitHub" class="card-image" />
+        <div class="card-content">
+          <h2 class="card-title">GitHub</h2>
+          <p class="card-description">Официальнй GitHub аккаунт разработчика «ARMSTRONG»</p>
+          <button class="card-button">
+            <a href="https://github.com/Ifnuh666" target="_blank">Нажмите здесь</a>
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="{{ url_for('static', filename='images/tg.png') }}" alt="Telegram" class="card-image" />
+        <div class="card-content">
+          <h2 class="card-title">Telegram</h2>
+          <p class="card-description">Официальнй Telegram-канал «ARMSTRONG»</p>
+          <button class="card-button">
+            <a href="https://github.com/Ifnuh666" target="_blank">Нажмите здесь</a>
+          </button>
+        </div>
+      </div>
+    </div>
 {% endblock %}
