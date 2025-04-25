@@ -229,6 +229,10 @@ footer>a{
   transition: background-color 0.3s;
 }
 
+.btna{
+    text-decoration: none;
+}
+
 .card-button:hover {
   background-color: #86c0ff;
 }
@@ -251,6 +255,7 @@ footer>a{
 
 .input1{
     border-radius: 5px;
+    height: 30px;
 }
 
 textarea{
@@ -280,6 +285,8 @@ textarea{
     background: #02b875;
     font-size: 20px;
     color: black;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .btndel{
@@ -288,8 +295,40 @@ textarea{
     font-size: 20px;
 }
 
+.btndel:hover{
+    transform: scale(1.2);
+}
+
 .btnup{
     color: green;
     text-decoration: none;
     font-size: 20px;
+}
+
+.btnup:hover{
+    transform: scale(1.2);
+}
+
+
+.get{
+    font-size: 15px;
+    background: #02b875;
+    padding: 5px;
+}
+
+.get:hover{
+     background: white;
+    color: black;
+}
+
+
+.area{
+    border-radius: 5px;
+}
+
+.kn{
+    display: flex;
+    gap: 20px;
+    margin: 5px;
+
 }
