@@ -12,7 +12,7 @@ body
 header
 {
     height: 100px;
-    background: #C5C6C7;
+    background: #4ca3fa;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,7 +20,7 @@ header
 }
 
 footer{
-     background: #C5C6C7;
+     background: #4ca3fa;
     position: absolute;
   left: 0;
   bottom: 0;
@@ -56,19 +56,19 @@ footer>a{
 .navig>a
 {
     height: 50%;
-    background: #A9A9A9;
+    background: white;
     padding: 0px 5px;
     display: flex;
     align-items: center;
     text-decoration: none;
     border-radius: 10px;
-    color: white;
+    color: black;
     font-size: 20px;
 }
 
 .navig>a:hover
 {
-    background: white;
+    background: rgb(189, 189, 189);
     color: black;
 }
 
@@ -159,8 +159,9 @@ footer>a{
 
 .con {
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
     color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .logo {
@@ -231,6 +232,7 @@ footer>a{
 
 .btna{
     text-decoration: none;
+    color: black;
 }
 
 .card-button:hover {
